@@ -1,0 +1,64 @@
+{
+  "name": "copy-path-with-at",
+  "displayName": "Copy Path with @",
+  "description": "Copie le chemin du fichier avec @ devant, ou tous les fichiers d'un dossier",
+  "version": "0.0.3",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "publisher": "coup-de-dev",
+  "author": {
+    "name": "Coup de Dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coup-de-dev/copy-path-with-at"
+  },
+  "bugs": {
+    "url": "https://github.com/coup-de-dev/copy-path-with-at/issues"
+  },
+  "homepage": "https://github.com/coup-de-dev/copy-path-with-at#readme",
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "copy",
+    "path",
+    "clipboard",
+    "file",
+    "directory"
+  ],
+  "icon": "images/icon.png",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyPathWithAt.copyPath",
+        "title": "Copy Path with @"
+      },
+      {
+        "command": "copyPathWithAt.interceptCopy",
+        "title": "Copy Path with @ (Smart)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "copyPathWithAt.copyPath",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4"
+  }
+}
